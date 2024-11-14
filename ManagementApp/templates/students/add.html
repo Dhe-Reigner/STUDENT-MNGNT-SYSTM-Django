@@ -11,11 +11,19 @@
 <div class="row justify-content-center">
     <div class="col-6">
         <div class="card bg-light mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">
+                <i class="fa-solid fa-address-card fa-lg"></i> Student Registration
+            </div>
             <div class="card-body">
-              <h4 class="card-title">Light card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <form action="{% url 'add' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Add</button>
+                <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+              </form>
             </div>
           </div>
     </div>
 </div>
+{% endif %}
+{% endblock content %}

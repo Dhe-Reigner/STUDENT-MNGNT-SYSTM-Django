@@ -33,7 +33,7 @@ def add(request):
                 mean_score = new_mean_score
             )
             new_student.save()
-            return render(request, 'student/add.html',{
+            return render(request, 'students/add.html',{
                 'form':StudentForm(),
                 'success': True
             })

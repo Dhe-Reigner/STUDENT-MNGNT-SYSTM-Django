@@ -10,7 +10,7 @@ class Student(models.Model):
     mean_score = models.FloatField()
     
     def __str__(self):
-        return f'Student:{self.first_name}{self.last_name}'
+        return f'Student: {self.first_name} {self.last_name}'
     
     
     
